@@ -42,4 +42,10 @@
       set its .textContent property with your error message, and set 
       .style.display = 'block' to make it visible. Remember to hide it again
       after the user corrects the problem.
+
+    - For an additional challenge, turn the + sign into a <select> with various
+      human-readable operators (+, -, x, /), and do the appropriate calculation
+      based on which one the user selects. For details on the <select> element 
+      see http://www.w3schools.com/tags/tag_select.asp. Use the same .value
+      property to get the value attribute of the currently-selected <option>
 */
