@@ -50,29 +50,38 @@
       property to get the value attribute of the currently-selected <option>
 */
 
+//when the DOM content is loaded...
 document.addEventListener('DOMContentLoaded', function() {
+    //grab references to the error message paragraph, value inputs, and the result span
     var errorAlert = document.getElementById('error-message');
     var val1Input = document.getElementById('value-1');
     var val2Input = document.getElementById('value-2');
     var resultSpan = document.getElementById('result');
 
+    //shows an error message
     function showError(message) {
         errorAlert.textContent = message;
         errorAlert.style.display = 'block';
     }
 
+    //hides any error message
     function hideError() {
         errorAlert.style.display = 'none';
     }
 
+    //when the user clicks the = button...
     document.getElementById('equals-button').addEventListener('click', function() {
-        if (0 == val1Input.value.length || 0 == val2Input.value.length) {
+        //ensure that the inputs actually have values
+        //trim() trims off any white space on either side of the value
+        if (0 == val1Input.value.trim().length || 0 == val2Input.value.trim().length) {
             return showError('You must enter something for both values!');
         }
 
-        var num1 = parseFloat(val1Input.value);
-        var num2 = parseFloat(val2Input.value);
+        //parse values into floats
+        var num1 = parseFloat(val1Input.value.trim());
+        var num2 = parseFloat(val2Input.value.trim());
 
+        //ensure they parsed into valid numbers
         if (isNaN(num1)) {
             return showError('Sorry, ' + val1Input.value + ' is not a number!');
         }
@@ -81,7 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return showError('Sorry, ' + val2Input.value + ' is not a number!');
         }
 
+        //set the result span's text content to show the 
+        //result of the calculation
         resultSpan.textContent = num1 + num2;
+
+        //and hide any previously-shown error
         hideError();
     });
 });
