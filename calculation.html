@@ -12,8 +12,20 @@
 
         <p>
             <input type="text" class="form-control calc-input" id="value-1" autofocus>
-            +
+            <select class="calc-operator" id="operator-1">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+            </select>
             <input type="text" class="form-control calc-input" id="value-2">
+            <select class="calc-operator" id="operator-2">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="x">x</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" class="form-control calc-input" id="value-3">
             <button type="button" class="btn btn-primary" id="equals-button">=</button>
             <span id="result"></span>
         </p>
