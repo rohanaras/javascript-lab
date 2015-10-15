@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Address Book</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body class="container">
+        <h1>Address Book</h1>
+
+        <p class="alert alert-danger" id="error-message"></p>
+
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" class="form-control" placeholder="First Name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" class="form-control" placeholder="Last Name"/>
+        </div>
+
+        <p><button class="btn btn-primary" id="add-name-button">Add</button></p>
+
+        <ul id="people-list"></ul>
+
+        <script src="js/names.js"></script>
+    </body>
+</html>
