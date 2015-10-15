@@ -96,5 +96,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         //and hide any previously-shown error
         hideError();
-    });
-});
+    }); //equals button click
+}); //DOMContentLoaded
