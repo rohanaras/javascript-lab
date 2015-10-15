@@ -29,3 +29,46 @@
       you add a new person object to the array
  */
 
+//when the DOM is fully loaded...
+document.addEventListener('DOMContentLoaded', function() {
+    //get references to the various elements in the page
+    var firstNameInput = document.getElementById('first-name');
+    var lastNameInput = document.getElementById('last-name');
+    var addButton = document.getElementById('add-name-button');
+    var peopleList = document.getElementById('people-list');
+
+    //array of people objects (starts out empty)
+    var people = [];
+
+    //renders the current set of people objects inside
+    //the peopleList element
+    function renderPeople() {
+        //clear the current contents of the element
+        peopleList.innerHTML = '';
+
+        //for each object in the array...
+        people.forEach(function(person) {
+            //create a new <li> for the person
+            var li = document.createElement('li');
+
+            //set the text content to be the first and last name
+            li.textContent = person.firstName + ' ' + person.lastName;
+
+            //append the new <li> to the <ul>
+            peopleList.appendChild(li);
+        });
+    }
+
+    //when the add button is clicked...
+    addButton.addEventListener('click', function() {
+        //create and push a new object into the array
+        //setting the firstName and lastName properties
+        people.push({
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value
+        });
+
+        //re-render the people
+        renderPeople();
+    }); //add button click
+}); //DOMContentLoaded
